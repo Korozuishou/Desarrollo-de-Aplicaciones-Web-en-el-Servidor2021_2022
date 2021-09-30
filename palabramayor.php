@@ -15,6 +15,8 @@ function mayor_array($palabras){
     }
     return  $maximo;    
 }
+
+
 $maximo=mayor_array($palabras);
 echo " La palabra mayor es: ". $maximo;
 ?>

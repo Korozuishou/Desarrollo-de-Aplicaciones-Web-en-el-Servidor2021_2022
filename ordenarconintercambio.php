@@ -3,37 +3,29 @@
 $texto = "esto es un texto para saber cual es la palabra mayor";
 $palabras = explode(" ", $texto);
 function mayor_array($palabras){
-    $maximo = "a";
+    $auxiliar="a";
     $indice = 0;
-    $tamano = count($palabras)-1;
-    while ($indice <= $tamano){
-        if(strcmp($palabras[$indice],$maximo)>0){
-            $maximo=$palabras[$indice];
+    for ($i=0; $i<=count($palabras)-1;$i++){
+        if (strcmp($palabras[$i],$auxiliar)>=0){
+            $indice=$i;
+            $auxiliar=$palabras[$i];
         }
-        $indice++;
     }
-    return  $maximo;    
+    return $indice;
 }
-function intercambio($indice,$palabras,$texto){
-    $posicion = 0;
+function intercambio($pala,$indic){
+    $ax=count($pala)-1;
+    $ultima_palabra=$pala[$ax];
+    $palabra_mayor=$pala[$indic];
+    $pala[$ax]=$palabra_mayor;
+    $pala[$indic]=$ultima_palabra;
+    return $pala;
     
-    $palabras = explode(" ",$texto);
-    $tamano = count($palabras)-1;
-    While($indice <= $tamano){
-         if($palabras[$indice] > $palabras[$indice])
-            {
-                $posicion     = $palabras[$indice];
-                $palabras[$indice] = $palabras[$indice];
-                $palabras[$indice] = $posicion;
-            }
-        }
-            return $posicion;
 
 }
-$maximo=mayor_array($palabras);
-echo " La palabra mayor es: ". $maximo;
-$posicion=intercambio($tamano,$indice,$texto,$palabras);
-echo $posicion;
+$palabras=intercambio($pala,$indic);
+echo " La palabra mayor es: ". $pala;
+
 
 ?>
 
