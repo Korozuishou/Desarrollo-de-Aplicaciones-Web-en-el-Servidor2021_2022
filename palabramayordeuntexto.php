@@ -9,7 +9,7 @@ function mayor_array($palabras){
     while ($i<=$tamano){
         if(strcmp($palabras[$i],$mayor)>0){
             $mayor = $palabras[$i];
-            $pos=[$i];
+            $pos=$i;
         }
         $i++;
     }
@@ -18,18 +18,13 @@ function mayor_array($palabras){
 
 function intercambio($arra,$posicion){
     
-    /*$lon=count($arra)-1;
-    $auxiliar = $arra[$posicion];
-    $pal=$arra[$lon];
-    $arra[$posicion]=$pal;
-    $arra[$lon]=$auxiliar;
-    */
+    
 
     $lon=count($arra)-1;
     $auxiliar=$arra[$posicion]; 
     $ul=$arra[$lon];
     $arra[$posicion]=$ul;
-    $arra[$lon]=$arra[$auxiliar];
+    $arra[$lon]=$auxiliar;
     return $arra;
 }
 
